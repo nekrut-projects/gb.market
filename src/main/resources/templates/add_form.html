@@ -25,11 +25,16 @@
             <span>Price: </span>
             <input type="number" name="price" step="0.01">
         </p>
-        <button class="btn btn-primary" type="submit">Add</button>
+        <button class="btn btn-primary" type="submit">Добавить</button>
     </form>
     <p>
         <form method="get" th:action="@{/products}">
-            <button class="btn btn-primary" type="submit">List products</button>
+            <button class="btn btn-primary" type="submit">Список товаров</button>
+        </form>
+    </p>
+    <p>
+        <form method="get" th:action="@{/index}">
+            <button class="btn btn-primary" type="submit">На главную</button>
         </form>
     </p>
 </div>

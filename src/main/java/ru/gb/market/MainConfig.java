@@ -28,8 +28,20 @@ public class MainConfig {
     }
 
     @GetMapping(value = "products")
-    public String getMainPage(Model model){
+    public String getProducts(Model model){
         model.addAttribute("products", productRepository.getProducts());
         return "products";
+    }
+
+    @GetMapping(value = "find_product")
+    public String getProductById(Model model, @RequestParam int id){
+        Product product = productRepository.getProductById(id);
+        model.addAttribute("products", product);
+        return "products";
+    }
+
+    @GetMapping(value = "index")
+    public String getMainPage(){
+        return "index";
     }
 }
