@@ -1,4 +1,4 @@
-package ru.gb.market;
+package ru.gb.market.model;
 
 public class Product {
     private String title;
@@ -29,8 +29,8 @@ public class Product {
         return price;
     }
 
-    public Product(int id, String name, float price) {
-        this.title = name;
+    public Product(int id, String title, float price) {
+        this.title = title;
         this.id = id;
         this.price = price;
     }
