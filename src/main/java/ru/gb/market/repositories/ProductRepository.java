@@ -1,6 +1,7 @@
-package ru.gb.market;
+package ru.gb.market.repositories;
 
 import org.springframework.stereotype.Component;
+import ru.gb.market.model.Product;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -26,10 +27,11 @@ public class ProductRepository {
                 return p;
             }
         }
-        return null;
-    }
-    public void addProduct(Product product) {
-        products.add(product);
+        throw new RuntimeException();
     }
 
+    public void addProduct(String title, int price) {
+        int id = products.size();
+        products.add(new Product(id + 1, title, price));
+    }
 }
